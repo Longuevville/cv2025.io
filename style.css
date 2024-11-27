@@ -1,0 +1,111 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: 'cursive', sans-serif;
+    color: rgb(0, 0, 0);
+}
+
+.container {
+    display: flex; /* Utilisation de flexbox pour la mise en page générale */
+    flex-direction: column; /* Par défaut, les éléments seront empilés en colonne */
+    align-items: center; /* Centrage des éléments */
+    gap: 20px; /* Espacement entre les éléments */
+    justify-content: flex-start; /* Les éléments sont alignés en haut */
+}
+
+.card-custom {
+    display: flex; /* Flexbox pour les cartes */
+    flex-direction: row; /* Les cartes sont en colonne par défaut */
+    align-items: center; /* Centrer le contenu */
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.card-content :hover{
+ background-color: beige;
+}
+
+.card-horizontal {
+    border-radius: 40px;
+}
+
+.card-image .card-content p {
+    height: 40px;
+    width:  100%;
+}
+
+.card-custom .card-highlight:hover {
+    background-color: rgb(47, 92, 218);
+}
+
+.card-custom .card-highlight {
+    width: 100%;
+    height: 5px;
+    background-color: #000000;
+}
+
+.card-custom .card-content {
+    flex-grow: 4;
+    padding: 60px;
+    text-align: center;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+/* Utilisation de Flexbox pour les écrans moyens */
+@media (min-width: 600px) {
+    .card-custom {
+        flex-direction: row; /* Pour les grands écrans, on passe en ligne pour la présentation */
+        align-items: flex-start; /* Alignement au début de la ligne */
+        text-align: left; /* Alignement à gauche */
+    }
+    .card-custom .card-highlight {
+        width: 10px;
+        height: auto;
+    }
+}
+
+/* Représentation en une colonne pour les écrans petits */
+@media (min-width: 733px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card-custom {
+        max-width: 800px;
+        margin: 10px auto;
+    }
+}
+
+/* Pour les grands écrans, la page devient une grille avec deux colonnes */
+@media (min-width: 992px) {
+    .container {
+        display: flex;
+        flex-direction: row; /* Aligner les items en ligne sur les grands écrans */
+        justify-content: space-evenly; /* Espacement égal entre les éléments */
+        text-align: center;
+    }
+
+    .card-custom {
+        max-width: 800px;
+        margin: 10px;
+    }
+}
+
+/* Assurer que la section "about" et "container" soient en haut */
+section#about, .container {
+    margin-top: 0;
+}
+
+section#about {
+    padding-top: 20px; /* Un peu de marge pour séparer "about" des autres sections */
+}
+
+header {
+    margin-bottom: 20px; /* Espacement entre l'en-tête et les autres sections */
+}
